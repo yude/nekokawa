@@ -1,7 +1,10 @@
 import { Hono } from 'hono'
 import { html } from 'hono/html'
+import { cors } from 'hono/cors'
 
 const app = new Hono()
+
+app.use(cors())
 
 app.get('/', async (c) => {
   return c.html(
